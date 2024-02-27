@@ -1,0 +1,105 @@
+* {
+   box-sizing: border-box;
+   padding: 0px;
+   margin: 0px;
+}
+
+body {
+   padding: 50px;
+   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.accordion-section {
+   display: flex;
+
+   .accordion {
+      width: 100px;
+      height: 600px;
+      border: 1px solid black;
+      position: relative;
+      overflow: hidden;
+      transition: all 1s ease-in-out;
+
+      &.active {
+         transition: all 0.8s ease-in-out;
+         width: 100%;
+         height: 600px;
+
+         a {
+            transform: rotate(0deg);
+            padding: 30px;
+         }
+
+         p {
+            opacity: 1;
+            transition: all 0.5s ease-in-out;
+            transition-delay: 0.85s;
+         }
+
+         span {
+            &.close {
+               right: 30px;
+               transform: rotate(360deg);
+
+               &::after {
+                  transform: translate(-50%, -50%) rotate(0deg);
+               }
+            }
+         }
+      }
+
+      a {
+         text-decoration: none;
+         width: 600px;
+         height: 100px;
+         display: flex;
+         padding-left: 30px;
+         align-items: center;
+         transform: rotate(90deg);
+         transform-origin: 8%;
+         font-size: 30px;
+         line-height: 120%;
+         transition: all 0.5s ease-in-out;
+      }
+
+      p {
+         opacity: 0;
+         font-size: 20px;
+         line-height: 120%;
+         padding: 0px 30px 30px;
+         position: relative;
+         z-index: -1;
+      }
+
+      span {
+         &.close {
+            cursor: pointer;
+            position: absolute;
+            bottom: 30px;
+            right: 35px;
+            width: 30px;
+            height: 30px;
+            transition: all 1s ease-in-out;
+
+            &::after,
+            &::before {
+               content: '';
+               position: absolute;
+               top: 50%;
+               left: 50%;
+               width: 100%;
+               height: 10%;
+               border-radius: 50px;
+               background-color: #000;
+               transform: translate(-50%, -50%);
+               transition: all 0.8s ease-in-out;
+            }
+
+            &::after {
+               transform: translate(-50%, -50%) rotate(-90deg);
+               transition-delay: 0.3s;
+            }
+         }
+      }
+   }
+}

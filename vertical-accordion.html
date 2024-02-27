@@ -1,0 +1,64 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Bubbles Hover</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="vertical-accordion.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <div class="appFrame">
+
+    <div class="accordion-sec">
+      <section id="accordion1" class="accordion" style="background:#000">
+        <h2><a href="javascript:void(0);">Operations</a></h2>
+        <div class="accordion-show">
+          <p>I am text block. Click edit button to change this text.</p>
+          <a href="#">Read More</a>
+        </div>
+      </section>
+
+      <section id="accordion2" class="accordion" style="background:#000">
+        <h2><a href="javascript:void(0);">Laboratory</a></h2>
+        <div class="accordion-show">
+          <p>I am text block. Click edit button to change this text.</p>
+          <a href="#">Read More</a>
+        </div>
+      </section>
+
+      <section id="accordion3" class="accordion" style="background: #000">
+        <h2><a href="javascript:void(0);">Consulting</a></h2>
+        <div class="accordion-show">
+          <p>I am text block. Click edit button to change this text.</p>
+          <a href="#">Read More</a>
+        </div>
+      </section>
+
+    </div>
+
+  </div>
+  <script src="https://sfg.pwd.net.au/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+  <script>
+    jQuery(document).ready(function(){
+      jQuery('#accordion1 a,#accordion2 a,#accordion3 a').click(function(e){
+        jQuery('#accordion1 a,#accordion2 a,#accordion3 a').parent().parent().removeClass('active')
+        if(!jQuery(this).hasClass('.active')){
+          jQuery(this).parent().parent().addClass('active')				
+        }
+      })
+    });
+  </script>
+</body>
+
+</html>
